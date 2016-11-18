@@ -32,8 +32,8 @@ public class TelaInicialActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
+        //Realm realm = Realm.getDefaultInstance();
+       // realm.beginTransaction();
 
        // Exercicio exercicio1 = new Exercicio(1,"Supino","4","34kg","8-10","5 segundos",1);
        // Exercicio exercicio2 = new Exercicio(2,"SupinoFlexionado","4","34kg","8-10","5 segundos",1);
@@ -68,8 +68,8 @@ public class TelaInicialActivity extends AppCompatActivity {
         if (id == R.id.academia_proxima) {
             Intent i = new Intent(this,AcademiaProximaMapsActivity.class);
             startActivity(i);
-            return true;
-        }
+           return true;
+       }
 
         if (id == R.id.modificar_treino) {
             Intent i = new Intent(this,EditTreinoActivity.class);

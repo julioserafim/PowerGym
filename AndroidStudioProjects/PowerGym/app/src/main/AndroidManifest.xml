@@ -13,7 +13,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name=".Config.Configuracao"
+
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,10 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AcademiaProximaActivity"
-            android:label="@string/title_activity_academia_proxima"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EditTreinoActivity"
             android:label="@string/title_activity_edit_treino"
@@ -81,9 +78,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".AcademiaProximaMaps"
-            android:label="@string/title_activity_academia_proxima_maps" />
+
         <activity
             android:name=".AcademiaProximaMapsActivity"
             android:label="@string/title_activity_academia_proxima_maps"></activity>
