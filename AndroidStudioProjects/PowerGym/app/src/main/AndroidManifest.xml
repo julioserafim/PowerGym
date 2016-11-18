@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.julioserafim.powergym">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".Config.Configuracao"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".TelaInicialActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AcademiaProximaActivity"
+            android:label="@string/title_activity_academia_proxima"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditTreinoActivity"
+            android:label="@string/title_activity_edit_treino"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExerciciosCadastradosActivity"
+            android:label="@string/title_activity_exercicios_cadastrados"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MeuTreinoActivity"
+            android:label="@string/title_activity_meu_treino"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VideoExerciciosCadastradosActivity"
+            android:label="@string/title_activity_vide_exercicios_cadastrados"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MostrarTreinoActivity"
+            android:label="@string/title_activity_mostrar_treino"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CalculoIMCActivity"
+            android:label="@string/title_activity_calculo_imc"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".DownloadFileService" />
+        <service android:name=".NotificarAcademiaService" />
+
+        <activity
+            android:name=".ListaDeExerciciosMeuTreinoActivity"
+            android:label="@string/title_activity_lista_de_exercicios_meu_treino"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AlteracaoRemocaoTreinoActivity"
+            android:label="@string/title_activity_alteracao_remocao_treino"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".AcademiaProximaMaps"
+            android:label="@string/title_activity_academia_proxima_maps" />
+        <activity
+            android:name=".AcademiaProximaMapsActivity"
+            android:label="@string/title_activity_academia_proxima_maps"></activity>
+    </application>
+
+</manifest>
