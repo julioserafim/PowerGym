@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created by julioserafim on 11/18/16.
- */
+*/
 
 public class AcademiasEmQuixada {
     private List<Academia> academias;

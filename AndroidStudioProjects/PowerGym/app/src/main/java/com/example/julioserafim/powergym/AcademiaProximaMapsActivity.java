@@ -3,10 +3,13 @@ package com.example.julioserafim.powergym;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -17,6 +20,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.text.DecimalFormat;
 
 public class AcademiaProximaMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -46,30 +51,32 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        String origem = "-4.358125, -39.311350";
+        /*String origem = "-4.358125, -39.311350";
         String destino = "-4.363228, -39.317026";
         String url = "http://maps.googleapis.com/maps?f=d&saddr=" +origem+"&daddr="+destino+"&hl=pt";
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));*/
+
+
 
         // Add a marker in Sydney and move the camera
-        /*LatLng caninde = new LatLng(-4.358125, -39.311350); //Valores aleatórios
-        mMap.addMarker(new MarkerOptions()
+        LatLng casaCaninde = new LatLng(-4.361010, -39.312737); //Valores aleatórios
+       /* mMap.addMarker(new MarkerOptions()
                 .position(caninde)
                 .title("Marker in Canindé")
                 //.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_localization)) Adicionar Icone
 
-        );
+        );*/
 
 
-        LatLng pracaDoRomeiro = new LatLng(-4.363228, -39.317026); //Valores aleatórios
-        mMap.addMarker(new MarkerOptions()
+        LatLng casaQuixada = new LatLng(-4.967879, -39.026165); //Valores aleatórios
+       /* mMap.addMarker(new MarkerOptions()
                         .position(pracaDoRomeiro)
                         .title("Praça do Romeiro")
                 //.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_localization)) Adicionar Icone
 
-        );
+        );*/
 
-        PolylineOptions linha = new PolylineOptions();
+       /* PolylineOptions linha = new PolylineOptions();
         linha.add(caninde);
         linha.add(pracaDoRomeiro);
         linha.color(Color.BLUE);
@@ -96,6 +103,55 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             return;
         }
         mMap.setMyLocationEnabled(true);*/
+
+        //CalculationByDistance(casaCaninde,casaQuixada);
+
+        Location caninde = new Location("casa caninde");
+        caninde.setLatitude(-4.361010);
+        caninde.setLongitude(-39.312737);
+
+
+        Location quixada = new Location("casa quixada");
+        quixada.setLatitude(-4.967879);
+        quixada.setLongitude(-39.026165);
+
+        float distancia = caninde.distanceTo(quixada);
+        float distanciaKm = (distancia/1000);
+        Log.i("DISTÂNCA", "" + distanciaKm + "KM");
+
+    }
+
+    public double CalculationByDistance(LatLng StartP, LatLng EndP) {
+        int Radius = 6371;// radius of earth in Km
+        double lat1 = StartP.latitude;
+        double lat2 = EndP.latitude;
+        double lon1 = StartP.longitude;
+        double lon2 = EndP.longitude;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double valueResult = Radius * c;
+        double km = valueResult / 1;
+        DecimalFormat newFormat = new DecimalFormat("####");
+        int kmInDec = Integer.valueOf(newFormat.format(km));
+        double meter = valueResult % 1000;
+        int meterInDec = Integer.valueOf(newFormat.format(meter));
+
+
+        Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
+                + " Meter   " + meterInDec);
+
+
+        double valor = Radius * c;
+        Toast.makeText(this, "Valor:" + valor  , Toast.LENGTH_SHORT).show();
+
+
+        return Radius * c;
+
 
     }
 }
