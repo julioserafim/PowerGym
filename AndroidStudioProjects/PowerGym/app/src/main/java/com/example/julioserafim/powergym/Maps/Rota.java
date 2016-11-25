@@ -9,8 +9,8 @@ import java.util.List;
  */
 
 public class Rota {
-    private Distancia distancia;
-    private Duracao duracao;
+    private Distancia distance;
+    private Duracao duration;
     private String endAddress;
     private LatLng endLocation;
     private String startAddress;
@@ -19,20 +19,20 @@ public class Rota {
     public List<LatLng> points;
 
 
-    public Distancia getDistancia() {
-        return distancia;
+    public Distancia getDistance() {
+        return distance;
     }
 
-    public void setDistancia(Distancia distancia) {
-        this.distancia = distancia;
+    public void setDistance(Distancia distance) {
+        this.distance = distance;
     }
 
-    public Duracao getDuracao() {
-        return duracao;
+    public Duracao getDuration() {
+        return duration;
     }
 
-    public void setDuracao(Duracao duracao) {
-        this.duracao = duracao;
+    public void setDuration(Duracao duration) {
+        this.duration = duration;
     }
 
     public String getEndAddress() {
@@ -43,20 +43,12 @@ public class Rota {
         this.endAddress = endAddress;
     }
 
-    public LatLng getEndLocation() {
-        return endLocation;
+    public LatLng getStartLocation() {
+        return startLocation;
     }
 
-    public void setEndLocation(LatLng endLocation) {
-        this.endLocation = endLocation;
-    }
-
-    public String getStartAddress() {
-        return startAddress;
-    }
-
-    public void setStartAddress(String startAddress) {
-        this.startAddress = startAddress;
+    public void setStartLocation(LatLng startLocation) {
+        this.startLocation = startLocation;
     }
 
     public List<LatLng> getPoints() {
@@ -67,11 +59,19 @@ public class Rota {
         this.points = points;
     }
 
-    public LatLng getStartLocation() {
-        return startLocation;
+    public String getStartAddress() {
+        return startAddress;
     }
 
-    public void setStartLocation(LatLng startLocation) {
-        this.startLocation = startLocation;
+    public void setStartAddress(String startAddress) {
+        this.startAddress = startAddress;
+    }
+
+    public LatLng getEndLocation() {
+        return endLocation;
+    }
+
+    public void setEndLocation(LatLng endLocation) {
+        this.endLocation = endLocation;
     }
 }

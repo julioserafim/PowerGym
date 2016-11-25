@@ -107,8 +107,8 @@ public class LocalizadorDirecao {
             JSONObject jsonEndLocation = jsonLeg.getJSONObject("end_location");
             JSONObject jsonStartLocation = jsonLeg.getJSONObject("start_location");
 
-            rota.setDistancia(new Distancia(jsonDistance.getString("texto"), jsonDistance.getInt("distancia")));
-            rota.setDuracao(new Duracao(jsonDuration.getString("texto"), jsonDuration.getInt("duracao")));
+            rota.setDistance(new Distancia(jsonDistance.getString("text"), jsonDistance.getInt("value")));
+            rota.setDuration(new Duracao(jsonDuration.getString("text"), jsonDuration.getInt("value")));
             rota.setEndAddress(jsonLeg.getString("end_address"));
             rota.setStartAddress(jsonLeg.getString("start_address"));
             rota.setStartLocation(new LatLng(jsonStartLocation.getDouble("lat"), jsonStartLocation.getDouble("lng")));

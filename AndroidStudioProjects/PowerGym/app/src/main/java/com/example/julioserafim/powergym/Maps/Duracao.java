@@ -5,27 +5,27 @@ package com.example.julioserafim.powergym.Maps;
  */
 
 public class Duracao {
-    private String texto;
-    private int duracao;
+    private String text;
+    private int value;
 
-    public Duracao(String texto, int duracao) {
-        this.texto = texto;
-        this.duracao = duracao;
+    public Duracao(String text, int value) {
+        this.text = text;
+        this.value = value;
     }
 
-    public String getTexto() {
-        return texto;
+    public String getText() {
+        return text;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public int getDuracao() {
-        return duracao;
+    public int getValue() {
+        return value;
     }
 
-    public void setDuracao(int duracao) {
-        this.duracao = duracao;
+    public void setValue(int value) {
+        this.value = value;
     }
 }

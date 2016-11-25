@@ -5,27 +5,27 @@ package com.example.julioserafim.powergym.Maps;
  */
 
 public class Distancia {
-    private String texto;
-    private int distancia;
+    private String text;
+    private int value;
 
-    public Distancia(String texto, int distancia) {
-        this.texto = texto;
-        this.distancia = distancia;
+    public Distancia(String text, int value) {
+        this.text = text;
+        this.value = value;
     }
 
-    public String getTexto() {
-        return texto;
+    public String getText() {
+        return text;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public int getDistancia() {
-        return distancia;
+    public int getValue() {
+        return value;
     }
 
-    public void setDistancia(int distancia) {
-        this.distancia = distancia;
+    public void setValue(int value) {
+        this.value = value;
     }
 }
