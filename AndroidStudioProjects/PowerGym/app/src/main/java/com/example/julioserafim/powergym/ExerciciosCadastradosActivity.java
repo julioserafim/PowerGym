@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -19,6 +20,9 @@ public class ExerciciosCadastradosActivity extends Activity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercicios_cadastrados);
 
+
+
+
         listView = (ListView)findViewById(R.id.listView);
         listView.setAdapter(new AdapterExercicios(this));
         listView.setOnItemClickListener(this);
@@ -27,11 +31,12 @@ public class ExerciciosCadastradosActivity extends Activity implements AdapterVi
     public void onItemClick(AdapterView<?> parent, View view, int idx, long id){
 
         String s = (String) parent.getAdapter().getItem(idx);
-        if(id == 1){
+
             Intent i = new Intent(this, VideoExerciciosCadastradosActivity.class);
+            i.putExtra(VideoExerciciosCadastradosActivity.VIDEO,id);
             startActivity(i);
 
-        }
+
 
         Toast.makeText(ExerciciosCadastradosActivity.this, "Exercicio selecionado:" + s + "id" + id, Toast.LENGTH_SHORT).show();
     }

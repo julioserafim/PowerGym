@@ -11,9 +11,7 @@ import android.widget.TextView;
  * Created by julioserafim on 10/28/16.
  */
 public class AdapterExercicios extends BaseAdapter{
-    private String[] exercicios = new String[] {"Supino Reto","Supino Declinado","Alongamento de Pernas","Remada Curvada" +
-            "Remada Cavalinho","Puxada Lateral","Levantamento Terra","Dorsal curvada","PumpIron",
-            "Rosca Direta","Puxada Tríceps"};
+    private String[] exercicios = new String[] {"Supino Declinado","Supino Reto","Extensão de Joelhos","Agachamento","Puxada de Frente","Rosca Direta","Puxada Tríceps na Holdana","Remada","Elevação de Pernas","Abdominais"};
 
     private Context context;
 

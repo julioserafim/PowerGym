@@ -86,4 +86,15 @@
         android:layout_alignTop="@+id/textView14"
         android:layout_alignEnd="@+id/textView11" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_lock_lock"
+        android:layout_below="@+id/textViewResultado"
+        android:layout_alignStart="@+id/editTextPeso"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="87dp"
+        android:id="@+id/imageViewImc" />
+
+
 </RelativeLayout>

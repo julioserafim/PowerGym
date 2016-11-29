@@ -17,6 +17,8 @@ public class Academia {
         this.endereco = endereco;
     }
 
+    public Academia(){}
+
     public String getNome() {
         return nome;
     }

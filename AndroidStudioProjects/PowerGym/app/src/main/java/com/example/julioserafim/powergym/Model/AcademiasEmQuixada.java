@@ -1,5 +1,6 @@
 package com.example.julioserafim.powergym.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,4 +17,11 @@ public class AcademiasEmQuixada {
         academias.add(new Academia("Fisico Academia Feminina",-4.967722, -39.016108,"R. Pres. Vargas, 2090 - Centro, Quixadá - CE, 63900-000"));
         academias.add(new Academia("World Fitness",-4.964397, -39.025083,"R. Joaquim Gomes da Silva, 2591 - Planalto Universitário, Quixadá - Ceará"));
     }
+
+    public List<Academia> getAcademiasDeQuixada(){
+        return academias;
+    }
+
+
+
 }

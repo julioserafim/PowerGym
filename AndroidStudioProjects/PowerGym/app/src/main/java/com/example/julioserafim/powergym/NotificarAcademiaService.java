@@ -18,6 +18,7 @@ public class NotificarAcademiaService extends Service{
         return null;
     }
 
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         String academiaProxima = intent.getStringExtra(ACADEMIA);
