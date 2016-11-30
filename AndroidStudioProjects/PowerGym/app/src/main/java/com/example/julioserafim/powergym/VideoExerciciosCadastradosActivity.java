@@ -36,9 +36,7 @@ public class VideoExerciciosCadastradosActivity extends AppCompatActivity {
 
         setarVideo(i);
 
-        downloadStatus = (TextView) findViewById(R.id.textViewStatusDownload);
-        Button btnDownload = (Button) findViewById(R.id.buttonDownloadService);
-        btnDownload.setOnClickListener(onDownloadListener());
+        //downloadStatus = (TextView) findViewById(R.id.textViewStatusDownload);
     }
 
     public void setarVideo(Intent intent){
@@ -158,168 +156,150 @@ public class VideoExerciciosCadastradosActivity extends AppCompatActivity {
 
     }
 
-    private View.OnClickListener onDownloadListener() {
-        return new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-
-                Intent intent1 = getIntent();
-                int id = 0;
-                long valor;
-                valor = intent1.getLongExtra(VideoExerciciosCadastradosActivity.VIDEO,id);
-
-
-                if(valor == 0){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "supinoreto.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv48.onlinevideoconverter.com/download?file=d3f5e4j9d3g6d3h7b1"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 1){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "supinodeclinado.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv89.onlinevideoconverter.com/download?file=f5j9i8j9i8j9j9c2"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 2){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "algo.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv46.onlinevideoconverter.com/download?file=g6b1a0c2j9b1d3g6b1"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 3){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "outroalgo.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv38.onlinevideoconverter.com/download?file=g6c2j9j9h7f5h7e4b1"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 4){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv14.onlinevideoconverter.com/download?file=a0f5f5a0g6e4a0h7b1"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 5){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv76.onlinevideoconverter.com/download?file=j9h7g6f5f5i8g6e4"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 6){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv76.onlinevideoconverter.com/download?file=j9h7g6f5f5i8g6e4"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 7){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv76.onlinevideoconverter.com/download?file=j9h7g6f5f5i8g6e4"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 8){
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv76.onlinevideoconverter.com/download?file=j9h7g6f5f5i8g6e4"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-                }
-
-                if(valor == 9) {
-                    Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
-                    intent.putExtra(DownloadFileService.NOMEARQUIVO, "K.mp3");
-                    intent.putExtra(DownloadFileService.URL, "http://sv76.onlinevideoconverter.com/download?file=j9h7g6f5f5i8g6e4"); //"http://i.imgur.com/cReBvDB.png"
-
-                    startService(intent);
-                    downloadStatus.setText("Downloading...");
-
-                }
-
-
-                Toast.makeText(VideoExerciciosCadastradosActivity.this, "OLA" + valor, Toast.LENGTH_SHORT).show();
-
-            }
-        };
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_tela_inicial, menu);
+        getMenuInflater().inflate(R.menu.menu_tela_video_cadastrados, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
+        int idMenu = item.getItemId();
 
 
-        if (id == R.id.meu_treino) {
-            Intent i = new Intent(this,ListaDeExerciciosMeuTreinoActivity.class);
+        if (idMenu == R.id.tela_inicial) {
+            Intent i = new Intent(this,TelaInicialActivity.class);
             startActivity(i);
 
             return true;
         }
 
-        if (id == R.id.academia_proxima) {
-            Intent i = new Intent(this,AcademiaProximaMapsActivity.class);
-            startActivity(i);
+        if (idMenu == R.id.downloadMp3) {
+
+            Intent intent1 = getIntent();
+            int id = 0;
+            long valor;
+            valor = intent1.getLongExtra(VideoExerciciosCadastradosActivity.VIDEO,id);
+
+
+            if(valor == 0){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "supinoreto.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-04-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/q6a0p8hiihes20bu96kislu5slp2g70b/1480521600000/12151624098411943033/*/0B0koGbSLPSj3T1RsdHIzNWJpZk0?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 1){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "supinodeclinado.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-0c-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/uhoul19bkmbmubvelfmvu43ot3nmidd1/1480521600000/12151624098411943033/*/0B0koGbSLPSj3OGdhUE9rSE5tVTg?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 2){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "extensaojoelhos.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-0g-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/ulhgm9676rl80ojihqou1bb7q1j43nro/1480521600000/12151624098411943033/*/0B0koGbSLPSj3MVV2Rm04QXkyWjQ?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 3){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "agachamento.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-0k-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/ittatm0ai1tgjb2q20en8rnbtl1g5tc5/1480521600000/12151624098411943033/*/0B0koGbSLPSj3bWJGNEdjdmE3VEE?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 4){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "puxadafrente.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-10-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/unpoj877pv6fa99dalm7ivi8tvonrsj5/1480521600000/12151624098411943033/*/0B0koGbSLPSj3WWY3TWNqWGpZRFE?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 5){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "roscadireta.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-14-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/p71t7gv6e0s91i8u9ul9q2pbsn0hj4jg/1480521600000/12151624098411943033/*/0B0koGbSLPSj3VWNCcTk3eWktTGc?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 6){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "pegadatriceps.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-10-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/9ivbagjn0tk86ld56ba9i8vo75hh1n7o/1480521600000/12151624098411943033/*/0B0koGbSLPSj3cDNRdG9JVm5naDg?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 7){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "remada.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-0c-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/pc56fu91tgn9pm8231v094m7cbij94jo/1480521600000/12151624098411943033/*/0B0koGbSLPSj3R2VzNFFDVGlYbTg?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 8){
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "flexaopernas.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-0g-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/fio6b0nqm6vo5g8b633okos510ogc479/1480521600000/12151624098411943033/*/0B0koGbSLPSj3Zk9jOHZKY1JfNms?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+                //downloadStatus.setText("Downloading...");
+            }
+
+            if(valor == 9) {
+                Intent intent = new Intent(VideoExerciciosCadastradosActivity.this, DownloadFileService.class);
+                intent.putExtra(DownloadFileService.NOMEARQUIVO, "abdominal.mp3");
+                intent.putExtra(DownloadFileService.URL, "https://doc-00-90-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/prgk2fm0jhnbu11n5jaunibuged0e6jj/1480521600000/12151624098411943033/*/0B0koGbSLPSj3ZXloWVZCazUtdmM?e=download"); //"http://i.imgur.com/cReBvDB.png"
+
+                startService(intent);
+                Toast.makeText(this, "Baixando...", Toast.LENGTH_SHORT).show();
+
+            }
+
+
             return true;
         }
 
-        if (id == R.id.modificar_treino) {
-            Intent i = new Intent(this,EditTreinoActivity.class);
-            startActivity(i);
-            return true;
-        }
 
-        if (id == R.id.exercicios_cadastrados) {
-            Intent i = new Intent(this,ExerciciosCadastradosActivity.class);
-            startActivity(i);
-            return true;
-        }
-
-        if (id == R.id.cacular_imc) {
-            Intent i = new Intent(this,CalculoIMCActivity.class);
-            startActivity(i);
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
-
-
-    public void voltarParaHome(View view){
-        Intent i = new Intent(this,TelaInicialActivity.class);
-        startActivity(i);
-    }
-
 
 
     @Override
@@ -344,10 +324,8 @@ public class VideoExerciciosCadastradosActivity extends AppCompatActivity {
 
                 if (tipoResultado == RESULT_OK) {
                     Toast.makeText(VideoExerciciosCadastradosActivity.this, "Arquivo Baixado com sucesso!", Toast.LENGTH_LONG).show();
-                    downloadStatus.setText("Download completed!");
                 } else {
                     Toast.makeText(VideoExerciciosCadastradosActivity.this, "Erro Download Arquivo!", Toast.LENGTH_LONG).show();
-                    downloadStatus.setText("Download failed!");
                 }
             }
         }

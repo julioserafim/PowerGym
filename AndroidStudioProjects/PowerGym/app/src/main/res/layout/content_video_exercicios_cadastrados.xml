@@ -12,40 +12,25 @@
     tools:context=".VideoExerciciosCadastradosActivity"
     tools:showIn="@layout/activity_video_exercicios_cadastrados">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <VideoView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="246dp"
         android:id="@+id/videoView"
-        android:layout_above="@+id/buttonDownloadService"
+        android:layout_above="@+id/textViewStatus"
         android:layout_alignParentStart="true" />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        android:id="@+id/buttonVoltarHome"
-        android:layout_marginBottom="117dp"
-        android:onClick="voltarParaHome"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download"
-        android:id="@+id/buttonDownloadService"
-        android:layout_alignTop="@+id/buttonVoltarHome"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
-
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Status:"
-        android:id="@+id/textView19"
-        android:layout_below="@+id/buttonDownloadService"
+        android:id="@+id/textViewStatus"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -53,7 +38,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewStatusDownload"
-        android:layout_below="@+id/buttonDownloadService"
-        android:layout_toStartOf="@+id/buttonVoltarHome" />
+        android:layout_alignRight="@id/textViewStatus"
+        android:layout_alignParent="true"/>-->
 
 </RelativeLayout>

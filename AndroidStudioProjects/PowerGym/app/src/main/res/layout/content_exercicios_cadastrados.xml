@@ -16,12 +16,6 @@
         android:layout_height="14dp"
         android:background="@color/colorPrimary"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar Tela Inicial"
-        android:id="@+id/buttonHome"
-        android:layout_gravity="right"
-        android:onClick="voltarHome"/>
+
 
 </LinearLayout>

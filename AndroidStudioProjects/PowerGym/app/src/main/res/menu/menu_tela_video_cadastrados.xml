@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.julioserafim.powergym.TelaInicialActivity">
+    <item
+        android:id="@+id/tela_inicial"
+        android:orderInCategory="100"
+        android:title="Tela Inicial"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/downloadMp3"
+        android:orderInCategory="100"
+        android:title="Download MP3"
+        app:showAsAction="never" />
+
+</menu>

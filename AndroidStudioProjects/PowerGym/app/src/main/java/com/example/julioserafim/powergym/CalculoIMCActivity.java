@@ -75,7 +75,6 @@ public class CalculoIMCActivity extends AppCompatActivity {
 
                         final ImageView iv = (ImageView) findViewById(R.id.imageViewImc);
 
-                        Log.i("OOOOLLALALALALAL", "OAOOAOAOAOAOA");
 
                         handler.post(new Runnable(){
                             public void run(){
@@ -93,9 +92,6 @@ public class CalculoIMCActivity extends AppCompatActivity {
                         final Bitmap imagem = BitmapFactory.decodeStream(input);
 
                         final ImageView iv = (ImageView) findViewById(R.id.imageViewImc);
-
-
-                        Log.i("OOOOLLALALALALAL", "OAOOAOAOAOAOA2");
 
                         handler.post(new Runnable(){
                             public void run(){
