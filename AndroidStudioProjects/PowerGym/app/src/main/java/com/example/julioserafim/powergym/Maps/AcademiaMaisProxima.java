@@ -1,6 +1,6 @@
-/*
 package com.example.julioserafim.powergym.Maps;
 
+import android.location.Location;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -9,88 +9,75 @@ import com.example.julioserafim.powergym.Model.AcademiasEmQuixada;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
-*/
-/**
- * Created by julioserafim on 11/25/16.
- *//*
+
+
 
 
 public class AcademiaMaisProxima {
 
     List<Academia> academias;
+    Location academiaAtual = new Location("Academia Atual");
+    Location academiaAnterior = new Location("Academia Anterior");
 
 
-   */
-/* public LatLng academiaMaisProxima (LatLng minhaLocalizacaoAtual){
-        LatLng locAcademiaAtual;
-        double distancia = 0;
-        double latitude;
-        double longitude;
+ public Location academiaMaisProxima (Location localizacaoAtual) {
+     AcademiasEmQuixada academiasEmQuixada = new AcademiasEmQuixada();
 
-        AcademiasEmQuixada academiaObjeto = new AcademiasEmQuixada();
-        academias = academiaObjeto.getAcademiasDeQuixada();
+     academias = new ArrayList<Academia>();
+     academias = academiasEmQuixada.getAcademiasDeQuixada();
 
-       academiaAtual =  academias.get(0);
-
-        for(int i = 1; i < academias.size(); i++){
-            academiaAtual = academias.get(i);
-            latitude = academiaAtual.getLatitude();
-            longitude = academiaAtual.getLongitude();
-
-            locAcademiaAtual = new LatLng(latitude,longitude);
-
-            Dis
-
-        }*//*
+     Academia academiaMaisProxima = null;
+        double distanciaAcademiaAnterior = 0;
+        double distanciaAcademiaAtual = 0;
 
 
+     for(int i = 1; i < academias.size(); i++){
+         /*Log.i("TESETETET",academias.get(0).getEndereco());
+         Log.i("TESETETET",academias.get(1).getNome());
+         Log.i("TESETETET",academias.get(2).getNome());
+         Log.i("TESETETET",academias.get(3).getNome());
+         Log.i("TESETETET",academias.get(4).getNome());*/
 
-        //Retornar a LATLONG da academia mais perto para o service
+         academiaAnterior.setLatitude(academias.get(i-1).getLatitude());
+         academiaAnterior.setLongitude(academias.get(i-1).getLongitude());
+         distanciaAcademiaAnterior = localizacaoAtual.distanceTo(academiaAnterior);
 
-
-
-    }
+         academiaAtual.setLatitude(academias.get(i).getLatitude());
+         academiaAtual.setLongitude(academias.get(i).getLongitude());
+         distanciaAcademiaAtual = localizacaoAtual.distanceTo(academiaAtual);
 
 
 
+            if(distanciaAcademiaAtual < distanciaAcademiaAnterior){
+                academiaMaisProxima = academias.get(i);
+                Log.i("ACADEMIAMAISPROX FOR:", academiaMaisProxima.getNome());
 
-    public double DistanciaEntreDoisLugares(LatLng StartP, LatLng EndP) {
-        int Radius = 6371;// radius of earth in Km
-        double lat1 = StartP.latitude;
-        double lat2 = EndP.latitude;
-        double lon1 = StartP.longitude;
-        double lon2 = EndP.longitude;
-        double dLat = Math.toRadians(lat2 - lat1);
-        double dLon = Math.toRadians(lon2 - lon1);
-        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
-                + Math.cos(Math.toRadians(lat1))
-                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
-                * Math.sin(dLon / 2);
-        double c = 2 * Math.asin(Math.sqrt(a));
-        double valueResult = Radius * c;
-        double km = valueResult / 1;
-        DecimalFormat newFormat = new DecimalFormat("####");
-        int kmInDec = Integer.valueOf(newFormat.format(km));
-        double meter = valueResult % 1000;
-        int meterInDec = Integer.valueOf(newFormat.format(meter));
+            }
 
 
-        Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
-                + " Meter   " + meterInDec);
+     }
 
+        if(academiaMaisProxima == null){
+            academiaMaisProxima = academias.get(0);
+        }
 
-       */
-/* double valor = Radius * c;
-        Toast.makeText(this, "Valor:" + valor, Toast.LENGTH_SHORT).show();
+        Log.i("ACADEMIAMAISPROX D-NULL", academiaMaisProxima.getNome());
 
+        academiaAtual.setLatitude(academiaMaisProxima.getLatitude());
+        academiaAtual.setLongitude(academiaMaisProxima.getLongitude());
 
-        return Radius * c;*//*
+        return academiaAtual;
+ }
 
 
 
-    //}
+
+
+
+
+
 
 }
-*/

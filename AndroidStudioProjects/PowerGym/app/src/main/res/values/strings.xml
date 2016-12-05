@@ -15,4 +15,5 @@
     </string>
     <string name="title_activity_alteracao_remocao_treino">AlteracaoRemocaoTreinoActivity</string>
     <string name="title_activity_academia_proxima_maps">Map</string>
+    <string name="title_activity_adicionar">AdicionarActivity</string>
 </resources>

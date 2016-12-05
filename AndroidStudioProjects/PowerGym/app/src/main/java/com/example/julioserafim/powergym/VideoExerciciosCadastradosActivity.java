@@ -53,6 +53,8 @@ public class VideoExerciciosCadastradosActivity extends AppCompatActivity {
             video.setMediaController(mediaController);
             video.setVideoURI(Uri.parse(path));
             video.start();
+
+
         }
 
         if(valor == 1){

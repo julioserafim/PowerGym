@@ -16,9 +16,9 @@ public class Exercicio extends RealmObject{
     private String peso;
     private String numeroRepeticoes;
     private String tempoDescanso;
-    private int diaSemana;
+    private long diaSemana;
 
-    public Exercicio(int codigo, String nomeExercicio, String series, String peso, String numeroRepeticoes, String tempoDescanso, int diaSemana) {
+    public Exercicio(int codigo, String nomeExercicio, String series, String peso, String numeroRepeticoes, String tempoDescanso, long diaSemana) {
         this.codigo = codigo;
         this.nomeExercicio = nomeExercicio;
         this.series = series;
@@ -71,11 +71,11 @@ public class Exercicio extends RealmObject{
         this.tempoDescanso = tempoDescanso;
     }
 
-    public int getDiaSemana() {
+    public long getDiaSemana() {
         return diaSemana;
     }
 
-    public void setDiaSemana(int diaSemana) {
+    public void setDiaSemana(long diaSemana) {
         this.diaSemana = diaSemana;
     }
 

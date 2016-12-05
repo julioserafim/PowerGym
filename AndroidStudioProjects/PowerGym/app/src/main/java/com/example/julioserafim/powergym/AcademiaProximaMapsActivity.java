@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.julioserafim.powergym.Maps.AcademiaMaisProxima;
 import com.example.julioserafim.powergym.Maps.DirecaoLozalizadorListener;
 import com.example.julioserafim.powergym.Maps.LocalizadorDirecao;
 import com.example.julioserafim.powergym.Maps.Rota;
@@ -55,6 +56,12 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
     private ProgressDialog progressDialog;
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
+    private Location academiaMaisProxima;
+    //private EditText etOrigin;
+    private EditText etDestination;
+
+    private String locOrigem;
+    private String locDestino;
 
 
     @Override
@@ -66,10 +73,9 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-       // etOrigin = (EditText) findViewById(R.id.etOrigin);
-        //etOrigin.setText("Rua Joaquim Custódio 231");
-        //etDestination = (EditText) findViewById(R.id.etDestination);
-       // etDestination.setText("Rua Joaquim Custódio 245");
+
+        etDestination = (EditText) findViewById(R.id.etDestination);
+        etDestination.setText("Rua Joaquim Custódio 245");
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
 
 
@@ -86,25 +92,28 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             @Override
             public void onClick(View v) {
                 sendRequest();
+                //metodo que retorna Lat e Long de academia mais proxima
             }
         });
 
     }
 
     private void sendRequest() {
-        String origin = origem.toString();
-        String destination = destino.toString();
-        if (origin.isEmpty()) {
+
+        // chamo o método que retorna a academia mais próxima.
+
+        String destination = etDestination.getText().toString();
+        if (locOrigem.isEmpty()) {
             Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (destination.isEmpty()) {
+        if (locDestino.isEmpty()) {
             Toast.makeText(this, "Please enter destination address!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         try {
-            new LocalizadorDirecao(this, origin, destination).execute();
+            new LocalizadorDirecao(this, locOrigem, locDestino).execute();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -121,8 +130,6 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
         mGoogleApiClient.disconnect();
         super.onStop();
     }
-
-
 
 
     /**
@@ -235,18 +242,33 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null){
-            origem = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+            //origem = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+            //AcademiaMaisProxima.academiaMaisProxima(mLastLocation);
+            AcademiaMaisProxima academia = new AcademiaMaisProxima();
+            academiaMaisProxima = academia.academiaMaisProxima(mLastLocation);
+
+            locDestino = locationStringFromLocation(academiaMaisProxima);
+            locOrigem = locationStringFromLocation(mLastLocation);
+            Toast.makeText(this, "ORIGEM " + locOrigem, Toast.LENGTH_SHORT).show();
         }
+
+
+
+   }
+
+    public static String locationStringFromLocation(final Location location) {
+        return Location.convert(location.getLatitude(), Location.FORMAT_DEGREES) + " " + Location.convert(location.getLongitude(), Location.FORMAT_DEGREES);
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-            // implementa nada
+        Toast.makeText(this, "Problema na conexão", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        // nothing
+        Toast.makeText(this, "Problema na conexão", Toast.LENGTH_SHORT).show();
+
     }
 
 

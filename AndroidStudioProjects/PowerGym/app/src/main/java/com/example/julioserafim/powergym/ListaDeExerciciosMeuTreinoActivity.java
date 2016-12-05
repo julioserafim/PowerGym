@@ -16,6 +16,7 @@ import com.example.julioserafim.powergym.Model.ExercicioAdapter;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmSchema;
 
 public class ListaDeExerciciosMeuTreinoActivity extends AppCompatActivity {
         private List<Exercicio> exercicios;
@@ -28,13 +29,18 @@ public class ListaDeExerciciosMeuTreinoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         realm = Realm.getDefaultInstance();
+        Intent i = getIntent();
+        long id = 0;
+        final long valor;
+        valor = i.getLongExtra("codigoDiaSemana",id);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(ListaDeExerciciosMeuTreinoActivity.this,AdicionarActivity.class);
+                i.putExtra("codigoDiaSemana",valor);
+                startActivity(i);
             }
         });
     }
@@ -42,12 +48,21 @@ public class ListaDeExerciciosMeuTreinoActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        mostrarExercicioDeAcordoComODia();
+    }
+
+    public void mostrarExercicioDeAcordoComODia(){
+        Intent i = getIntent();
+        long id = 0;
+        final long valor;
+        valor = i.getLongExtra("codigoDiaSemana",id);
 
         ListView exerciciosListView = (ListView)findViewById(R.id.listViewExercicios);
 
-        exercicios = realm.where(Exercicio.class).findAll();
+        exercicios = realm.where(Exercicio.class).equalTo("diaSemana",valor).findAll();
         ExercicioAdapter adapter = new ExercicioAdapter(this,exercicios);
         exerciciosListView.setAdapter(adapter);
+
 
         //Click cada item
         exerciciosListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,8 +70,12 @@ public class ListaDeExerciciosMeuTreinoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 Intent intent = new Intent(ListaDeExerciciosMeuTreinoActivity.this,AlteracaoRemocaoTreinoActivity.class);
                 intent.putExtra("Id",exercicios.get(i).getCodigo());
+                intent.putExtra("codigoDiaSemana",valor);
+
+
                 startActivity(intent);
             }
         });
     }
+
 }

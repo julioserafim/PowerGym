@@ -5,18 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
-
     <application
-
         android:name=".Config.Configuracao"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -62,6 +58,11 @@
         <service android:name=".NotificarAcademiaService" />
 
         <activity
+            android:name=".DiasDaSemanaActivity"
+            android:label="DiasDaSemanaActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".ListaDeExerciciosMeuTreinoActivity"
             android:label="@string/title_activity_lista_de_exercicios_meu_treino"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -81,14 +82,21 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
         <activity
             android:name=".AcademiaProximaMapsActivity"
-            android:label="@string/title_activity_academia_proxima_maps"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+            android:label="@string/title_activity_academia_proxima_maps" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".AdicionarActivity"
+            android:label="@string/title_activity_adicionar"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

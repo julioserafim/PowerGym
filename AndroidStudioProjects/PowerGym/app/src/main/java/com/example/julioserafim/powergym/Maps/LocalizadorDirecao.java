@@ -1,5 +1,6 @@
 package com.example.julioserafim.powergym.Maps;
 
+import android.location.Location;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -36,6 +37,8 @@ public class LocalizadorDirecao {
         this.origin = origin;
         this.destination = destination;
     }
+
+
 
     public void execute() throws UnsupportedEncodingException { // Chama o método execute para baixar dados
         listener.onDirectionLocalizadorStart();

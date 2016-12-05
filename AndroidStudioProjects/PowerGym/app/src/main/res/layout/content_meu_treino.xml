@@ -12,77 +12,14 @@
     tools:context="com.example.julioserafim.powergym.MeuTreinoActivity"
     tools:showIn="@layout/activity_meu_treino">
 
-    <Button
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Segunda"
-        android:id="@+id/button4"
+        app:srcCompat="@drawable/cast_ic_mini_controller_stop"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="73dp"
-        android:onClick="verTreinoDesseDia"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Terça"
-        android:id="@+id/button5"
-        android:layout_alignTop="@+id/button4"
-        android:layout_toEndOf="@+id/button4"
-        android:onClick="verTreinoDesseDia"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quarta"
-        android:id="@+id/button6"
-        android:layout_above="@+id/button8"
-        android:layout_toEndOf="@+id/button5"
-        android:onClick="verTreinoDesseDia"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quinta"
-        android:id="@+id/button7"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentStart="true"
-        android:onClick="verTreinoDesseDia"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sexta"
-        android:id="@+id/button8"
-        android:layout_alignTop="@+id/button7"
-        android:layout_toEndOf="@+id/button7"
-        android:onClick="verTreinoDesseDia"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sábado"
-        android:id="@+id/button9"
-        android:layout_below="@+id/button6"
-        android:layout_toEndOf="@+id/button5"
-        android:onClick="verTreinoDesseDia"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Escolha o Dia:"
-        android:id="@+id/textView15"
-        android:layout_above="@+id/button5"
-        android:layout_alignEnd="@+id/button6" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar Menu"
-        android:id="@+id/button11"
-        android:layout_marginBottom="73dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/button8"
-        android:onClick="irMenu"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="21dp"
+        android:id="@+id/imageView" />
 </RelativeLayout>

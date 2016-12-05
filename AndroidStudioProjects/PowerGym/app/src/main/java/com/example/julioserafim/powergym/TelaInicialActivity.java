@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.julioserafim.powergym.Model.DiasDaSemana;
 import com.example.julioserafim.powergym.Model.Exercicio;
 
 import java.util.List;
@@ -59,7 +60,7 @@ public class TelaInicialActivity extends AppCompatActivity {
 
 
         if (id == R.id.meu_treino) {
-            Intent i = new Intent(this,ListaDeExerciciosMeuTreinoActivity.class);
+            Intent i = new Intent(this,DiasDaSemanaActivity.class);
             startActivity(i);
 
             return true;
