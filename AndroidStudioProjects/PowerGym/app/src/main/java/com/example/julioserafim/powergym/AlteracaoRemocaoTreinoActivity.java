@@ -62,6 +62,11 @@ public class AlteracaoRemocaoTreinoActivity extends AppCompatActivity {
 
                 realm.copyToRealm(exercicio);
                 realm.commitTransaction();
+                nomeExercicio.setText("");
+                numeroRepeticoes.setText("");
+                peso.setText("");
+                numeroSeries.setText("");
+                tempoDescanso.setText("");
                 Toast.makeText(AlteracaoRemocaoTreinoActivity.this, "Exercício Alterado!", Toast.LENGTH_SHORT).show();
 
             }
@@ -71,10 +76,18 @@ public class AlteracaoRemocaoTreinoActivity extends AppCompatActivity {
         Button remover = (Button)findViewById(R.id.buttonRemover);
         remover.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 realm.beginTransaction();
                 exercicio.deleteFromRealm();
                 realm.commitTransaction();
+
+                nomeExercicio.setText("");
+                numeroRepeticoes.setText("");
+                peso.setText("");
+                numeroSeries.setText("");
+                tempoDescanso.setText("");
                 Toast.makeText(AlteracaoRemocaoTreinoActivity.this, "Exercício Deletado!", Toast.LENGTH_SHORT).show();
+
 
             }
         });

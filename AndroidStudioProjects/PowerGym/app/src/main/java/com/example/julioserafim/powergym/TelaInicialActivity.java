@@ -72,11 +72,6 @@ public class TelaInicialActivity extends AppCompatActivity {
            return true;
        }
 
-        if (id == R.id.modificar_treino) {
-            Intent i = new Intent(this,EditTreinoActivity.class);
-            startActivity(i);
-            return true;
-        }
 
         if (id == R.id.exercicios_cadastrados) {
             Intent i = new Intent(this,ExerciciosCadastradosActivity.class);

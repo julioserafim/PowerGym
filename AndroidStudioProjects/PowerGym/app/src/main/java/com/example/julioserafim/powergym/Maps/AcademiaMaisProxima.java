@@ -1,11 +1,14 @@
 package com.example.julioserafim.powergym.Maps;
 
+import android.content.Intent;
 import android.location.Location;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.julioserafim.powergym.AcademiaProximaMapsActivity;
 import com.example.julioserafim.powergym.Model.Academia;
 import com.example.julioserafim.powergym.Model.AcademiasEmQuixada;
+import com.example.julioserafim.powergym.NotificarAcademiaService;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.DecimalFormat;
@@ -21,7 +24,7 @@ public class AcademiaMaisProxima {
     List<Academia> academias;
     Location academiaAtual = new Location("Academia Atual");
     Location academiaAnterior = new Location("Academia Anterior");
-
+    String academia = null;
 
     public Location academiaMaisProxima (Location localizacaoAtual) {
         AcademiasEmQuixada academiasEmQuixada = new AcademiasEmQuixada();
@@ -60,8 +63,12 @@ public class AcademiaMaisProxima {
 
         }
 
+        academia = academiaMaisProxima.getNome();
         Log.i("ACADEMIAMAISPROX D-NULL", academiaMaisProxima.getNome());
         Log.i("LATITUDE ACADEM", academiaMaisProxima.toString());
+
+
+        //startService(intent);
 
         academiaAtual.setLatitude(academiaMaisProxima.getLatitude());
         academiaAtual.setLongitude(academiaMaisProxima.getLongitude());
@@ -71,7 +78,9 @@ public class AcademiaMaisProxima {
     }
 
 
-
+    public String academia(){
+        return academia;
+    }
 
 
 

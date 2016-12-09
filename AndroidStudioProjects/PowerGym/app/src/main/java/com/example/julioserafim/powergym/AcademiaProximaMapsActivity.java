@@ -88,16 +88,12 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             @Override
             public void onClick(View v) {
                 sendRequest();
-                //metodo que retorna Lat e Long de academia mais proxima
             }
         });
 
     }
 
     private void sendRequest() {
-
-        // chamo o método que retorna a academia mais próxima.
-
 
         if (locOrigem.isEmpty()) {
             Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
@@ -167,8 +163,8 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
 
     @Override
     public void onDirectionLocalizadorStart() {
-        progressDialog = ProgressDialog.show(this, "Please wait.",
-                "Finding direction..!", true);
+        progressDialog = ProgressDialog.show(this, "Aguarde",
+                "Encontrando Academia!", true);
 
         if (originMarkers != null) {
             for (Marker marker : originMarkers) {
@@ -242,8 +238,7 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             //AcademiaMaisProxima.academiaMaisProxima(mLastLocation);
             AcademiaMaisProxima academia = new AcademiaMaisProxima();
             academiaMaisProxima = academia.academiaMaisProxima(mLastLocation);
-            Log.i("LATITUTE",academiaMaisProxima.toString());
-            Log.i("MLASTLOCAL", mLastLocation.toString());
+
 
             double latitude = mLastLocation.getLatitude();
             String latitudeString = String.valueOf(latitude);
@@ -260,13 +255,12 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             latitudeD = Double.parseDouble(latitudeStringD.replace(",","."));
             latitudeStringD = String.valueOf(latitudeD);
 
+            Toast.makeText(this, "Academia mais próxima:" + academia.academia(), Toast.LENGTH_SHORT).show();
             double longitudeD = academiaMaisProxima.getLongitude();
+
             String longitudeStringD = String.valueOf(longitudeD);
             longitudeD = Double.parseDouble(longitudeStringD.replace(",","."));
             longitudeStringD = String.valueOf(longitudeD);
-
-
-
 
 
 
@@ -274,14 +268,10 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             locDestino = latitudeStringD+","+" "+longitudeStringD;
 
 
-
-
-
-
             //locOrigem = locationStringFromLocation(mLastLocation);
             Log.i("LOC ORIGEM", locOrigem);
             Log.i("LOC DESTINO", locDestino);
-            Toast.makeText(this, "ORIGEM " + locOrigem, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "ORIGEM " + locOrigem, Toast.LENGTH_SHORT).show();
         }
 
 

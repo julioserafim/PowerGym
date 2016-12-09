@@ -97,7 +97,7 @@ public class LocalizadorDirecao {
 
     }
 
-    private void parseJSon(String data) throws JSONException { // Converter Json e salvar rotas
+    private void parseJSon(String data) throws JSONException {
         if (data == null)
             return;
 

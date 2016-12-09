@@ -1,5 +1,6 @@
 package com.example.julioserafim.powergym;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -9,20 +10,21 @@ import android.widget.Toast;
 /**
  * Created by julioserafim on 10/09/16.
  */
-public class NotificarAcademiaService extends Service{
+public class NotificarAcademiaService extends IntentService {
  private static final String ACADEMIA = "ACADEMIA";
 
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
+
+    public NotificarAcademiaService() {
+        super("NotificarAcademiaService");
     }
 
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        String academiaProxima = intent.getStringExtra(ACADEMIA);
-        Toast.makeText(NotificarAcademiaService.this, "Academia mais próxima:" + academiaProxima, Toast.LENGTH_SHORT).show();
-        return START_STICKY;
+    protected void onHandleIntent(Intent intent) {
+        String academia = intent.getStringExtra("academia");
+        Toast.makeText(this, "Academi mais próxima" + academia, Toast.LENGTH_SHORT).show();
     }
+
+
+
 }

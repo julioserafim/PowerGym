@@ -30,10 +30,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditTreinoActivity"
-            android:label="@string/title_activity_edit_treino"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ExerciciosCadastradosActivity"
             android:label="@string/title_activity_exercicios_cadastrados"
             android:theme="@style/AppTheme.NoActionBar" />

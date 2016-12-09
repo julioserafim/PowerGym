@@ -41,6 +41,5 @@ public class DiasDaSemanaActivity extends AppCompatActivity implements AdapterVi
             Intent i = new Intent(this, ListaDeExerciciosMeuTreinoActivity.class);
             i.putExtra("codigoDiaSemana",id);
             startActivity(i);
-        Toast.makeText(this, "Ola", Toast.LENGTH_SHORT).show();
     }
 }

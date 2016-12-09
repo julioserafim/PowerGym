@@ -17,14 +17,10 @@
     <item
         android:id="@+id/exercicios_cadastrados"
         android:orderInCategory="100"
-        android:title="Ver Exercícios Cadastrados"
+        android:title="Ver Vídeos de Exercícios"
         app:showAsAction="never"/>
 
-    <item
-        android:id="@+id/modificar_treino"
-        android:orderInCategory="100"
-        android:title="Modificar Treino"
-        app:showAsAction="never" />
+
 
     <item
         android:id="@+id/cacular_imc"

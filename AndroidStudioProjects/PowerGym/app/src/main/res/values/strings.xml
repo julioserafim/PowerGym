@@ -3,17 +3,17 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_academia_proxima">AcademiaProximaActivity</string>
     <string name="title_activity_edit_treino">EditTreinoActivity</string>
-    <string name="title_activity_exercicios_cadastrados">ExerciciosCadastradosActivity</string>
+    <string name="title_activity_exercicios_cadastrados">Vídeos de Exercícios</string>
     <string name="title_activity_meu_treino">MeuTreinoActivity</string>
-    <string name="title_activity_vide_exercicios_cadastrados">VideExerciciosCadastrados</string>
+    <string name="title_activity_vide_exercicios_cadastrados">Visualização Vídeo</string>
     <string name="title_activity_modificar_treino">ModificarTreinoActivity</string>
     <string name="title_activity_tabs_treino_semana">TabsTreinoSemanaActivity</string>
     <string name="title_activity_mostrar_treino">MostrarTreinoActivity</string>
-    <string name="title_activity_calculo_imc">CalculoIMCActivity</string>
+    <string name="title_activity_calculo_imc">Calculo de IMC</string>
     <string name="title_activity_lista_de_exercicios_meu_treino">
-        ListaDeExerciciosMeuTreinoActivity
+        Meu Treino
     </string>
-    <string name="title_activity_alteracao_remocao_treino">AlteracaoRemocaoTreinoActivity</string>
+    <string name="title_activity_alteracao_remocao_treino">Alterar ou Remover Treino</string>
     <string name="title_activity_academia_proxima_maps">Map</string>
-    <string name="title_activity_adicionar">AdicionarActivity</string>
+    <string name="title_activity_adicionar">Adicionar Treino</string>
 </resources>
