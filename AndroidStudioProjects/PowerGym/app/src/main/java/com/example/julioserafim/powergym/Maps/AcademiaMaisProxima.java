@@ -23,31 +23,26 @@ public class AcademiaMaisProxima {
     Location academiaAnterior = new Location("Academia Anterior");
 
 
- public Location academiaMaisProxima (Location localizacaoAtual) {
-     AcademiasEmQuixada academiasEmQuixada = new AcademiasEmQuixada();
+    public Location academiaMaisProxima (Location localizacaoAtual) {
+        AcademiasEmQuixada academiasEmQuixada = new AcademiasEmQuixada();
 
-     academias = new ArrayList<Academia>();
-     academias = academiasEmQuixada.getAcademiasDeQuixada();
+        academias = new ArrayList<Academia>();
+        academias = academiasEmQuixada.getAcademiasDeQuixada();
 
-     Academia academiaMaisProxima = null;
+        Academia academiaMaisProxima = null;
         double distanciaAcademiaAnterior = 0;
         double distanciaAcademiaAtual = 0;
 
 
-     for(int i = 1; i < academias.size(); i++){
-         /*Log.i("TESETETET",academias.get(0).getEndereco());
-         Log.i("TESETETET",academias.get(1).getNome());
-         Log.i("TESETETET",academias.get(2).getNome());
-         Log.i("TESETETET",academias.get(3).getNome());
-         Log.i("TESETETET",academias.get(4).getNome());*/
+        for(int i = 1; i < academias.size(); i++){
 
-         academiaAnterior.setLatitude(academias.get(i-1).getLatitude());
-         academiaAnterior.setLongitude(academias.get(i-1).getLongitude());
-         distanciaAcademiaAnterior = localizacaoAtual.distanceTo(academiaAnterior);
+            academiaAnterior.setLatitude(academias.get(i-1).getLatitude());
+            academiaAnterior.setLongitude(academias.get(i-1).getLongitude());
+            distanciaAcademiaAnterior = localizacaoAtual.distanceTo(academiaAnterior);
 
-         academiaAtual.setLatitude(academias.get(i).getLatitude());
-         academiaAtual.setLongitude(academias.get(i).getLongitude());
-         distanciaAcademiaAtual = localizacaoAtual.distanceTo(academiaAtual);
+            academiaAtual.setLatitude(academias.get(i).getLatitude());
+            academiaAtual.setLongitude(academias.get(i).getLongitude());
+            distanciaAcademiaAtual = localizacaoAtual.distanceTo(academiaAtual);
 
 
 
@@ -58,19 +53,22 @@ public class AcademiaMaisProxima {
             }
 
 
-     }
+        }
 
         if(academiaMaisProxima == null){
             academiaMaisProxima = academias.get(0);
+
         }
 
         Log.i("ACADEMIAMAISPROX D-NULL", academiaMaisProxima.getNome());
+        Log.i("LATITUDE ACADEM", academiaMaisProxima.toString());
 
         academiaAtual.setLatitude(academiaMaisProxima.getLatitude());
         academiaAtual.setLongitude(academiaMaisProxima.getLongitude());
+        Log.i("ACADEMIA ATUAL", academiaAtual.toString());
 
         return academiaAtual;
- }
+    }
 
 
 

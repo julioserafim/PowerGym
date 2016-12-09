@@ -57,8 +57,6 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
     private Location academiaMaisProxima;
-    //private EditText etOrigin;
-    private EditText etDestination;
 
     private String locOrigem;
     private String locDestino;
@@ -74,8 +72,6 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
         mapFragment.getMapAsync(this);
 
 
-        etDestination = (EditText) findViewById(R.id.etDestination);
-        etDestination.setText("Rua Joaquim Custódio 245");
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
 
 
@@ -102,7 +98,7 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
 
         // chamo o método que retorna a academia mais próxima.
 
-        String destination = etDestination.getText().toString();
+
         if (locOrigem.isEmpty()) {
             Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
             return;
@@ -246,18 +242,58 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
             //AcademiaMaisProxima.academiaMaisProxima(mLastLocation);
             AcademiaMaisProxima academia = new AcademiaMaisProxima();
             academiaMaisProxima = academia.academiaMaisProxima(mLastLocation);
+            Log.i("LATITUTE",academiaMaisProxima.toString());
+            Log.i("MLASTLOCAL", mLastLocation.toString());
 
-            locDestino = locationStringFromLocation(academiaMaisProxima);
-            locOrigem = locationStringFromLocation(mLastLocation);
+            double latitude = mLastLocation.getLatitude();
+            String latitudeString = String.valueOf(latitude);
+            latitude = Double.parseDouble(latitudeString.replace(",","."));
+            latitudeString = String.valueOf(latitude);
+
+            double longitude = mLastLocation.getLongitude();
+            String longitudeString = String.valueOf(longitude);
+            longitude = Double.parseDouble(longitudeString.replace(",","."));
+            longitudeString = String.valueOf(longitude);
+
+            double latitudeD = academiaMaisProxima.getLatitude();
+            String latitudeStringD = String.valueOf(latitudeD);
+            latitudeD = Double.parseDouble(latitudeStringD.replace(",","."));
+            latitudeStringD = String.valueOf(latitudeD);
+
+            double longitudeD = academiaMaisProxima.getLongitude();
+            String longitudeStringD = String.valueOf(longitudeD);
+            longitudeD = Double.parseDouble(longitudeStringD.replace(",","."));
+            longitudeStringD = String.valueOf(longitudeD);
+
+
+
+
+
+
+            locOrigem = latitudeString+","+" "+longitudeString;
+            locDestino = latitudeStringD+","+" "+longitudeStringD;
+
+
+
+
+
+
+            //locOrigem = locationStringFromLocation(mLastLocation);
+            Log.i("LOC ORIGEM", locOrigem);
+            Log.i("LOC DESTINO", locDestino);
             Toast.makeText(this, "ORIGEM " + locOrigem, Toast.LENGTH_SHORT).show();
         }
 
 
 
-   }
+    }
 
     public static String locationStringFromLocation(final Location location) {
         return Location.convert(location.getLatitude(), Location.FORMAT_DEGREES) + " " + Location.convert(location.getLongitude(), Location.FORMAT_DEGREES);
+    }
+
+    public static String locationStringFromLocation(final double latitude, double longitude) {
+        return Location.convert(latitude, Location.FORMAT_DEGREES) + " " + Location.convert(longitude, Location.FORMAT_DEGREES);
     }
 
     @Override
@@ -274,4 +310,3 @@ public class AcademiaProximaMapsActivity extends FragmentActivity implements OnM
 
 
 }
-

@@ -2,6 +2,7 @@ package com.example.julioserafim.powergym.Maps;
 
 import android.location.Location;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -32,12 +33,12 @@ public class LocalizadorDirecao {
     private String origin;
     private String destination;
 
+
     public LocalizadorDirecao(DirecaoLozalizadorListener listener, String origin, String destination) {
         this.listener = listener;
         this.origin = origin;
         this.destination = destination;
     }
-
 
 
     public void execute() throws UnsupportedEncodingException { // Chama o método execute para baixar dados
@@ -48,6 +49,12 @@ public class LocalizadorDirecao {
     private String createUrl() throws UnsupportedEncodingException { // cria url
         String urlOrigin = URLEncoder.encode(origin, "utf-8");
         String urlDestination = URLEncoder.encode(destination, "utf-8");
+
+        Log.i("ORIGEM STRING", origin);
+        Log.i("ORIGEM STRING", destination);
+
+
+        Log.i("API KEY",DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_KEY);
 
         return DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_KEY;
     }

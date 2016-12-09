@@ -54,8 +54,7 @@ public class ImplementacaoExercicioRepository implements IExercicioRepository {
         realmExercicio.setTempoDescanso(exercicio.getTempoDescanso());
         realm.copyToRealm(realmExercicio);
         realm.commitTransaction();
-
-
+        
 
     }
 }
